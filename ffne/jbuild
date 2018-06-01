@@ -1,0 +1,4 @@
+(executables
+ ((names (ffne))
+  (libraries (core))
+  ))
