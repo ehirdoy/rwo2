@@ -1,0 +1,4 @@
+(executables
+ ((names (sum))
+  (libraries (core stdio))
+  ))
