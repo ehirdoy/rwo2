@@ -1,8 +1,13 @@
-make -k 
+$ make clean
+rm -rf _build *~
+$ make run
 jbuilder build --dev sum.exe
-    ocamldep sum.depends.ocamldep-output
-      ocamlc sum.{cmi,cmo,cmt}
-    ocamlopt sum.{cmx,o}
-    ocamlopt sum.exe
-
-Compilation finished at Fri Jun  1 15:02:48
+sum.depends.ocamldep-output
+sum.{cmi,cmo,cmt}
+sum.{cmx,o}
+sum.exe
+_build/default/sum.exe
+1
+2
+3
+Total: 6.
