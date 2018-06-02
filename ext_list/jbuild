@@ -1,0 +1,4 @@
+(executables
+ ((names (common))
+  (libraries (base))
+))
