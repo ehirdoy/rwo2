@@ -1,3 +1,5 @@
+open Core
+
 module Log_entry = struct
   type t =
     { session_id: string;
