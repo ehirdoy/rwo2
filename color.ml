@@ -22,25 +22,25 @@ let test = printf "Hello %s World!\n" blue
 
 type weight = Regular | Bold;;
 type color =
-  | Basic of basic_color * weight (* basic colors, regular and bold *)
-  | RGB   of int * int * int       (* 6x6x6 color cube *)
-  | Gray  of int                   (* 24 grayscale levels *)
+  | Basic of basic_color     (* basic colors *)
+  | Bold  of basic_color     (* bold basic colors *)
+  | RGB   of int * int * int (* 6x6x6 color cube *)
+  | Gray  of int             (* 24 grayscale levels *)
 
-let test = [RGB (250,70,70); Basic (Green, Regular)]
+let test = [RGB (250,70,70); Basic (Green); Bold (Red)]
 
 let color_to_int = function
-  | Basic (basic_color,weight) ->
-    let base = match weight with Bold -> 8 | Regular -> 0 in
-    base + basic_color_to_int basic_color
+  | Basic basic_color -> basic_color_to_int basic_color
+  | Bold  basic_color -> 8 + basic_color_to_int basic_color
   | RGB (r,g,b) -> 16 + b + g * 6 + r * 36
   | Gray i -> 232 + i
 
 let color_print color s =
   printf "%s\n" (color_by_number (color_to_int color) s)
 
-let test = color_print (Basic (Red,Bold)) "A bold red!"
+let test = color_print (Basic (Red)) "A regular red!"
+let test = color_print (Bold (Blue)) "A bold blue!"
 let test = color_print (Gray 4) "A muted gray..."
-    
     
 
 
