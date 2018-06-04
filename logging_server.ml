@@ -30,7 +30,7 @@ type client_message = | Logon of Logon.t
 
 let messages_for_user user messages =
   let (user_messages,_) =
-    List.fold messages ~init:([], Set.empty (module String))
+    List.fold messages ~init:([], Set.empty (String.comparator))
       ~f:(fun ((messages,user_sessions) as acc) message ->
           match message with
           | Logon m ->
