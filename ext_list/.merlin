@@ -1,0 +1,7 @@
+B _build/default
+FLG -w -40
+PKG base
+PKG base.caml
+PKG base.shadow_stdlib
+PKG sexplib.0
+S .

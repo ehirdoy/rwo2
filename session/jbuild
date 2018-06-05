@@ -1,0 +1,4 @@
+(executables
+ ((names (session))
+  (libraries (base core_kernel))
+))
